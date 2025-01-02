@@ -1,0 +1,1068 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
+
+/* General Styles */
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f8f8f8; /* Light background for better contrast */
+}
+/* Prevent horizontal overflow */
+body, html {
+  overflow-x: hidden; /* Disables horizontal scrolling */
+}
+
+/* Ensure images don't overflow their container */
+img {
+  max-width: 100%; /* Prevents images from exceeding the container's width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the space properly without stretching */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.brand-name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #555;
+}
+
+.start-now {
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  border: 2px solid #000; /* Thin black border */
+  border-radius: 30px; /* Rounded corners */
+  padding: 10px 30px; /* Adjust padding for a better look */
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif; /* Matches the rest of your site's font */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.start-now:hover {
+  background-color: #000; /* Black background on hover */
+  color: #fff; /* White text on hover */
+}
+
+
+.start-now:hover {
+  background-color: #444;
+}
+
+/* Image Container for Overlapping Images */
+.image-container {
+  position: relative;
+  width: 500px; /* Adjust width to fit the design */
+  height: 300px; /* Adjust height as needed */
+  margin: 50px auto; /* Center the container */
+}
+
+.overlapping-img {
+  position: absolute; /* Allows positioning images relative to the container */
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.overlapping-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.overlapping-img:nth-child(1) {
+  top: 100px; /* Ensure 'px' is added for valid syntax */
+  left: -130px; /* Move the image 150px from the left */
+  width: 70%;
+  height: 300px;
+  z-index: 2; /* Foreground image */
+}
+
+.overlapping-img:nth-child(2) {
+  top: 20px;
+  left: 150px;
+  width: 220px;
+  height: 320px;
+  z-index: 3; /* Middle image */
+}
+
+.overlapping-img:nth-child(3) {
+  top: 100px;
+  left: 330px;
+  width: 300px;
+  height: 300px;
+  z-index: 1; /* Background image */
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+  background-color: #fff;
+  padding: 5px 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  opacity: 0.95;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar Container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+}
+
+
+/* Add this to your Home section */
+#home {
+  margin-bottom: 50px; /* Adjust the value to control the space */
+}
+
+/* Navbar Button Styling */
+#nav-login-btn {
+  background-color: transparent; /* Make the background transparent */
+  color: black; /* Set the text color to black to match nav links */
+  border: none; 
+  font-size: 14px; /* Same font size as nav links */
+  font-family: 'Playfair Display', serif;
+  padding: 5px 10px; /* Match the padding of nav links */
+  position: relative; 
+  cursor: pointer;
+}
+
+/* Underline Hover Animation for Login Button */
+#nav-login-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+#nav-login-btn:hover::after {
+  width: 100%; /* Apply the underline animation */
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: -20px;
+}
+
+.logo img.logo1 {
+  width: 60px;
+  height: auto;
+  margin-right: -1px;
+}
+
+.logo span.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 18px; /* Larger font size for desktop */
+  color: black;
+  font-size: 14px;
+  padding: 5px 10px;
+  position: relative;
+}
+
+/* Underline Hover Animation */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 30px; /* Increase font size for better visibility */
+  cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Show the hamburger icon on mobile */
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 363px; /* Move the hamburger icon to the left */
+    font-size: 30px; /* Larger font size */
+  }
+
+  /* Nav Links (After Hamburger Click) */
+  .nav-links {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    text-align: center; /* Ensure text is centered */
+    display: none; /* Initially hidden */
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px; /* Position below the navbar */
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional for a slight shadow effect */
+  }
+
+  /* Show menu when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 10px 0; /* Add spacing for better touch targets */
+  }
+
+  .nav-links a {
+    font-size: 18px; /* Adjust the font size on mobile */
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  /* Opacity Underline */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    opacity: 1;
+  }
+}
+
+/* Adding a margin to body content to prevent navbar from overlapping the top */
+body {
+  margin-top: 20px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Add space below the homepage content */
+.homepage-content {
+  padding-bottom: 100px; /* Adjust the value as needed */
+}
+
+/* About Section */
+.about-page {
+  background: url('/images/About_bg.jpeg') no-repeat center center fixed; /* Background image for the entire section */
+  background-size: cover; /* Ensures the image covers the entire section */
+  padding: 50px 20px;
+  text-align: center;
+  position: relative; /* Allows us to add an overlay on top of the background image */
+  color: #fff; /* Default text color */
+}
+
+/* Overlay with opacity */
+.about-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+  z-index: 1; /* Ensures the overlay stays on top of the image */
+}
+
+.about-box {
+  background-color: rgba(244, 244, 244, 0.8); /* Light grey background with opacity for the box */
+  position: relative;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  color: #222; /* Dark text for better contrast on the light box */
+  z-index: 2; /* Ensures it appears above the overlay */
+}
+
+.about-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white overlay */
+  border-radius: 10px;
+  z-index: 1; /* Ensures it appears above the background image */
+}
+
+.about-heading {
+  font-size: 2rem;
+  color: #222;
+  position: relative; /* Ensures text stays above the overlay */
+  z-index: 2;
+}
+
+.about-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  position: relative; /* Ensures text stays above the overlay */
+  z-index: 2;
+}
+
+/* Services Section */
+.services-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of cards on smaller screens */
+  gap: 0; /* No gap between the images */
+  justify-content: space-between; /* Ensures images are spaced evenly */
+  padding: 50px 20px;
+  height: 100vh; /* Ensures the section takes up the full height of the viewport */
+  align-items: center; /* Vertically centers the content */
+}
+
+.service-card {
+  position: relative;
+  flex: 1 1 33%; /* Ensures cards take up 1/3 of the container width */
+  background: #fff;
+  border-radius: 20px; /* Rounded edges for the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Keeps image within the rounded boundary */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensures the card takes full height of the container */
+}
+
+.service-image {
+  width: 100%; /* Image fills the width of the card */
+  height: 100%; /* Image fills the height of the card */
+  object-fit: cover; /* Ensures the image covers the container */
+  border-radius: 20px; /* Rounded corners for the image */
+}
+
+.service-details {
+  position: absolute; /* Positioning text inside the card */
+  bottom: 20px; /* Position text towards the bottom */
+  left: 20px; /* Position text to the left */
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Add padding around the text */
+  border-radius: 15px; /* Rounded edges for the box */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .service-card {
+    width: 90%; /* Allow the service cards to take most of the width */
+    max-width: none; /* Remove max-width restriction */
+  }
+}
+
+/* General Styles */
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* Services Section Page */
+.services-page {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services-heading {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.services-subheading {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Circle Containers */
+.services-circle-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  padding-left: 10px; /* Move everything slightly to the right */
+}
+
+/* Individual Circle Container */
+.service-circle {
+  text-align: center;
+  padding-left: 25px; /* Move the content within each circle container to the right */
+}
+
+/* Circle Image */
+.service-circle-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 25px; /* Slight shift to the right */
+}
+
+/* Heading for Each Circle */
+.circle-heading {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Service Descriptions */
+.service-descriptions {
+  display: flex;
+  justify-content: space-around; /* Ensures each description has equal spacing */
+  margin-top: 50px;
+  text-align: center; /* Center-aligns the text */
+  flex-wrap: wrap; /* Allows the descriptions to wrap if the screen is small */
+}
+
+.service-description {
+  background-color: #fff; /* White background to make the text stand out */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px; /* Limits the width of each description */
+  margin: 10px; /* Space between the descriptions */
+  text-align: center;
+}
+
+.service-description h3 {
+  font-size: 1.5rem; /* Larger heading for each description */
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px; /* Adds spacing below the heading */
+}
+
+.service-description p {
+  font-size: 1rem; /* Normal size for the description text */
+  color: #555;
+  line-height: 1.6; /* Adjusts line height for better readability */
+}
+
+/* Small devices: Stack service descriptions */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .services-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .service-card {
+    max-width: 90%; /* Adjust for smaller screens */
+  }
+}
+
+/* Project Descriptions */
+.projects-section {
+  background-size: cover;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-heading {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 85px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.projects-section .project-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 20px;
+  position: relative; /* To position the overlay */
+}
+
+.project-slide::before {
+  content: ''; /* Create a pseudo-element for the blurred background */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit; /* Inherit the background-image */
+  filter: blur(1px); /* Adjust blur value as needed */
+  z-index: 1; /* Ensure it's below the content */
+}
+
+.project-slide {
+  background-size: cover;
+  background-position: center center;
+  min-height: 300px;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  width: 100%;
+  position: relative; /* To position the overlay */
+}
+
+.project-description {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay to make text readable */
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  z-index: 2; /* Ensure the text content appears above the blurred background */
+  position: relative; /* Prevent the description from being affected by the blur */
+  margin: 40px auto 0; /* Added 40px margin at the top to move the box down */
+}
+
+.project-description h3 {
+  margin: 0 0 10px;
+  font-size: 1.8rem;
+}
+
+.project-description p {
+  margin: 0 0 25px;
+}
+
+.project-description button {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Show project slides */
+.project-slide.active {
+  display: flex;
+}
+
+.project-description button:hover {
+  background-color: #ff4500;
+}
+
+/* Navigation dots */
+.navigation-dots {
+  position: absolute;
+  bottom: 20px; /* Adjusted distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30; /* Ensure dots are above the blurred background */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+.project-slide button {
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  top: -5px;
+  background-color: #e1e6ea;
+  color: rgb(13, 12, 12);
+  border: 1px solid #b3bac2;
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.project-slide button:hover {
+  background-color: #cbdbec;
+  transform: translateY(-2px);
+}
+
+/* Payment Container */
+.payment-container {
+  width: 90%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+/* Form Input Styles */
+.payment-form input[type="text"],
+.payment-form select {
+  width: 48%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.payment-form input[type="text"]:focus,
+.payment-form select:focus {
+  border-color: #4CAF50;
+}
+
+.payment-form .input-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 4%;
+}
+
+/* Card Number */
+.payment-form .input-group input {
+  width: 23%;
+}
+
+.payment-icons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-icons img {
+  width: 50px;
+  margin: 0 10px;
+  filter: grayscale(100%);
+  transition: all 0.3s;
+}
+
+.payment-icons img:hover {
+  filter: none;
+}
+
+/* Modal Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 90%;
+  max-width: 700px;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Buttons */
+.btn {
+  font-family: 'Playfair Display', serif;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.pay-now {
+  background-color: #4CAF50;
+}
+
+.pay-now:hover {
+  background-color: #45a049;
+}
+
+/* Step Progress */
+.progress-tracker {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.step {
+  width: 33.33%;
+  text-align: center;
+  color: #666;
+}
+
+.step.active {
+  color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .payment-container {
+      padding: 20px;
+  }
+
+  .payment-form input[type="text"],
+  .payment-form select {
+      width: 100%;
+  }
+
+  .payment-form .input-group {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .payment-form .input-group input {
+      width: 100%;
+  }
+
+  .payment-icons img {
+      width: 40px;
+      margin: 0 5px;
+  }
+}
+
+/* Contact Container */
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping on desktop */
+  justify-content: space-between;
+  padding: 20px; /* Add padding around content */
+  background-color: #f5f5f5; /* Optional background color */
+  gap: 20px; /* Ensure spacing between sections */
+}
+
+.contact-left {
+  background-color: #222;
+  color: #fff;
+  padding: 40px;
+  width: 40%; /* Left section takes 40% width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-left h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-left p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.contact-left a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-left a:hover {
+  text-decoration: underline;
+}
+
+.contact-right {
+  background-color: #fff;
+  padding: 40px; /* Proper padding for form */
+  width: 60%; /* Right section takes 60% width */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* Ensures padding doesn't mess up layout */
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-right label {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 95%; /* Full width */
+}
+
+.contact-right button {
+  font-family: 'Playfair Display', serif;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Button takes up full width */
+}
+
+.contact-right button:hover {
+  background-color: #555;
+}
+
+/* Responsive Design for smaller devices */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stack the sections vertically */
+    padding: 20px; /* Add padding for mobile */
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%; /* Ensure both sections are full width on mobile */
+    padding: 20px; /* Adjust padding */
+  }
+
+  /* Reduce the left section width for mobile */
+  .contact-left {
+    width: 80%; /* Reduce the left section width (adjust this value as needed) */
+    background-color: #333; /* Dark background for contrast */
+    margin-right: auto; /* Align it to the left */
+  }
+
+  .contact-right {
+    background-color: #f9f9f9; /* Light background for right section */
+  }
+
+  .contact-left h2 {
+    font-size: 1.5rem; /* Smaller font for mobile */
+  }
+
+  .contact-left p {
+    font-size: 1rem; /* Adjust text size for better readability */
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    font-size: 0.9rem; /* Smaller font size for inputs */
+  }
+
+  .contact-right button {
+    font-size: 1rem; /* Adjust button font size */
+  }
+}
+
+/* Default visibility for all sections */
+.hidden {
+  display: none;
+}
+
+/* Sign-In Page Styling */
+.signin-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('images/background.jpg'); /* Your background image */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.signin-container {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-container {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container input {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-container button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+  background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signin-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ddc68c;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
